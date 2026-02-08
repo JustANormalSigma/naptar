@@ -45,6 +45,11 @@ namespace NaptariFeladat
                     UjEsemeny();
                 }
 
+                else if (valasztas == "3")
+                {
+                    Legkozelebbi();
+                }
+
             }
         }
 
