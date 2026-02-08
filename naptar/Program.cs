@@ -40,6 +40,11 @@ namespace NaptariFeladat
                     Naptar();
                 }
 
+                else if (valasztas == "2")
+                {
+                    UjEsemeny();
+                }
+
             }
         }
 
