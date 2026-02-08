@@ -218,6 +218,43 @@ namespace NaptariFeladat
             Console.WriteLine("\nKész!\n");
         }
 
+        static void Legkozelebbi()
+        {
+            if (lista.Count == 0)
+            {
+                Console.WriteLine("\nNincs esemény");
+                return;
+            }
+
+            Random rnd = new Random();
+            int nap = rnd.Next(1, 30);
+            int ora = rnd.Next(0, 24);
+            int perc = rnd.Next(0, 60);
+            DateTime most = new DateTime(2028, 2, nap, ora, perc, 0);
+
+            Console.WriteLine($"\nMost: {most.Day}. {most.Hour}:{most.Minute:D2}");
+
+            Esemeny? talalat = null;
+            foreach (Esemeny e in lista)
+            {
+                if (e.Mikor >= most)
+                {
+                    talalat = e;
+                    break;
+                }
+            }
+
+            if (talalat != null)
+            {
+                Esemeny t = talalat.Value;
+                Console.WriteLine($"Következő: {t.Ki} - {t.Mikor.Day}. {t.Mikor.Hour}:{t.Mikor.Minute:D2} - {t.Meddig} perc\n");
+            }
+            else
+            {
+                Console.WriteLine("Nincs több esemény\n");
+            }
+        }
+
         static void Menu()
         {
             Console.WriteLine("\n1 - Naptár");
