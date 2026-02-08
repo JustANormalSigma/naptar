@@ -24,6 +24,7 @@ namespace NaptariFeladat
 
             Betoltes();
 
+
         }
 
 
@@ -69,6 +70,29 @@ namespace NaptariFeladat
                 Console.WriteLine("Nincs mentett fájl");
                 
             }
+
         }
-    }
+        static void VeletlenEsemenyek()
+        {
+            Random rnd = new Random();
+
+            for (int i = 0; i < 20; i++)
+            {
+                string ki = i < 10 ? "apa" : "anya";
+
+                int nap = rnd.Next(1, 30);
+                int ora = rnd.Next(8, 20);
+                int perc = new int[] { 0, 15, 30, 45 }[rnd.Next(4)];
+
+                DateTime mikor = new DateTime(2028, 2, nap, ora, perc, 0);
+                int meddig = rnd.Next(30, 121);
+
+                Esemeny e = new Esemeny();
+                e.Ki = ki;
+                e.Mikor = mikor;
+                e.Meddig = meddig;
+
+                lista.Add(e);
+            }
+        }
 }
