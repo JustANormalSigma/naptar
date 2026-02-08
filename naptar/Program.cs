@@ -117,5 +117,14 @@ namespace NaptariFeladat
             }
             Console.WriteLine();
         }
+
+        static void Menu()
+        {
+            Console.WriteLine("\n1 - Naptár");
+            Console.WriteLine("2 - Új esemény");
+            Console.WriteLine("3 - Legközelebbi esemény");
+            Console.WriteLine("4 - Kilépés");
+            Console.Write("\nVálassz: ");
+        }
     }
 }
