@@ -74,7 +74,7 @@ namespace NaptariFeladat
             catch
             {
                 Console.WriteLine("Nincs mentett fájl");
-                
+
             }
 
         }
@@ -101,4 +101,21 @@ namespace NaptariFeladat
                 lista.Add(e);
             }
         }
+
+        static void Naptar()
+        {
+            if (lista.Count == 0)
+            {
+                Console.WriteLine("\nNincs esemény a naptárban");
+                return;
+            }
+
+            Console.WriteLine("\n--- Naptár 2028 február ---\n");
+            foreach (Esemeny e in lista)
+            {
+                Console.WriteLine($"{e.Ki} - {e.Mikor.Day}. {e.Mikor.Hour}:{e.Mikor.Minute:D2} - {e.Meddig} perc");
+            }
+            Console.WriteLine();
+        }
+    }
 }
