@@ -67,6 +67,7 @@ namespace NaptariFeladat
             catch
             {
                 Console.WriteLine("Nincs mentett fájl");
+                
             }
         }
     }
