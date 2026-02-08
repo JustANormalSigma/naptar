@@ -24,6 +24,12 @@ namespace NaptariFeladat
 
             Betoltes();
 
+            if (lista.Count == 0)
+            {
+                Console.WriteLine("Generálás...");
+                VeletlenEsemenyek();
+            }
+
 
         }
 
