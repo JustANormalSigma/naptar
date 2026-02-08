@@ -29,8 +29,18 @@ namespace NaptariFeladat
                 Console.WriteLine("Generálás...");
                 VeletlenEsemenyek();
             }
+            bool fut = true;
+            while (fut)
+            {
+                Menu();
+                string valasztas = Console.ReadLine();
 
+                if (valasztas == "1")
+                {
+                    Naptar();
+                }
 
+            }
         }
 
 
