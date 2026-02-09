@@ -50,6 +50,17 @@ namespace NaptariFeladat
                     Legkozelebbi();
                 }
 
+                else if (valasztas == "4")
+                {
+                    Console.WriteLine("\nViszlát!");
+                    Mentes();
+                    fut = false;
+                }
+                else
+                {
+                    Console.WriteLine("\nRossz választás!");
+                }
+
             }
         }
 
