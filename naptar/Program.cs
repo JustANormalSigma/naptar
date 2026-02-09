@@ -223,6 +223,27 @@ namespace NaptariFeladat
             Console.WriteLine("\nKész!\n");
         }
 
+
+        static void Mentes()
+        {
+            try
+            {
+                StreamWriter f = new StreamWriter("esemenyek.txt");
+
+                foreach (Esemeny e in lista)
+                {
+                    f.WriteLine($"{e.Ki};{e.Mikor.Year}-{e.Mikor.Month}-{e.Mikor.Day} {e.Mikor.Hour}:{e.Mikor.Minute};{e.Meddig}");
+                }
+
+                f.Close();
+                Console.WriteLine("Mentve!");
+            }
+            catch
+            {
+                Console.WriteLine("Hiba a mentés során!");
+            }
+        }
+
         static void Legkozelebbi()
         {
             if (lista.Count == 0)
